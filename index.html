@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>01_数据类型</title>
+
+</head>
+
+<body>
+    <!--
+        1,分类
+            基本数据类型
+                Undefined
+                null
+                Number
+                String
+                boolean
+            引用数据类型
+                object
+                    array:特殊的对象（可以执行）
+                    function：数值下标，内部数据有序
+        2,判断
+            +typeof
+                可以判断:undefined，number,string,boolean
+                不能判断：null与object,array与object
+            +instanceof：判断对象的**具体**类型
+            +=== / ==
+                可以判断:undefined,null(这两个类型只有一个值)
+    -->
+    <h1>111</h1>
+    <h2>222</h2>
+</body>
+<script type="text/javascript">
+    //1、基本
+    //typeof返回数据类型的字符串表达
+    var a
+    console.log(a, typeof a)//undefined 'undefined'
+    a = null
+    console.log(typeof a) //object
+
+    //2、引用
+    var b1 = {
+        b2: [1, 'abc', console.log],
+        b3: function () {
+            console.log('b3')
+        }
+    }
+    console.log(b1 instanceof Object, b1 instanceof Array) //true false
+    console.log(b1.b2 instanceof Object, b1.b2 instanceof Object) //true true
+    console.log(b1.b3 instanceof Object, b1.b3 instanceof Object) //true true
+    console.log(typeof b1.b2) //object
+
+</script>
+
+</html>
